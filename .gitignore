@@ -8,6 +8,8 @@ log
 apache-couchdb-*/
 bin/
 config.erl
+*.tar.gz
+*.tar.bz2
 dev/boot_node.beam
 dev/lib/
 dev/logs/
@@ -106,3 +108,13 @@ src/mango/ebin/
 src/mango/test/*.pyc
 src/mango/venv/
 src/mango/.eunit
+
+src/chttpd/.eunit/
+src/couch_event/.eunit/
+src/couch_mrview/.eunit/
+src/couch_plugins/.eunit/
+src/couch_stats/.eunit/
+src/ddoc_cache/.eunit/
+src/fabric/.eunit/
+src/mem3/.eunit/
+src/rexi/.eunit/
