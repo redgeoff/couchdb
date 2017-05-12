@@ -193,8 +193,8 @@ get_compacted_seq(#st{header = Header}) ->
 
 
 get_del_doc_count(#st{} = St) ->
-    {ok, {_, DelCount, _}} = couch_btree:full_reduce(St#st.id_tree),
-    DelCount.
+    {ok, Reds} = couch_btree:full_reduce(St#st.id_tree),
+    {ok, element(2, Reds)}.
 
 
 get_disk_version(#st{header = Header}) ->
@@ -202,8 +202,9 @@ get_disk_version(#st{header = Header}) ->
 
 
 get_doc_count(#st{} = St) ->
-    {ok, {Count, _, _}} = couch_btree:full_reduce(St#st.id_tree),
-    Count.
+    {ok, Reds} = couch_btree:full_reduce(St#st.id_tree),
+    {ok, element(1, Reds)}.
+
 
 get_epochs(#st{header = Header}) ->
     couch_bt_engine_header:get(Header, epochs).
