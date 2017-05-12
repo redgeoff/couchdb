@@ -411,8 +411,7 @@ get_del_doc_count(Db) ->
     {ok, couch_db_engine:get_del_doc_count(Db)}.
 
 get_doc_count(Db) ->
-    {ok, Reds} = couch_btree:full_reduce(Db#db.id_tree),
-    {ok, element(1, Reds)}.
+    {ok, couch_db_engine:get_doc_count(Db)}.
 
 get_uuid(#db{}=Db) ->
     couch_db_engine:get_uuid(Db).
