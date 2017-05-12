@@ -651,7 +651,7 @@ get_possible_engines(DbName, RootDir, Engines) ->
             false ->
                 Acc
         end
-    end, [], Engines),
+    end, [], Engines).
 
 
 get_default_engine(Server, DbName) ->
