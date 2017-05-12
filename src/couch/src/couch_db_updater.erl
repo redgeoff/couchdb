@@ -48,7 +48,6 @@ init({Engine, DbName, FilePath, Options0}) ->
 
 
 terminate(Reason, Db) ->
->>>>>>> Implement pluggable storage engines
     couch_util:shutdown_sync(Db#db.compactor_pid),
     couch_db_engine:terminate(Reason, Db),
     ok.
