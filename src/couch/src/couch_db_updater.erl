@@ -687,15 +687,6 @@ commit_data(Db, _) ->
     }.
 
 
-maybe_track_db(#db{options = Options}) ->
-    case lists:member(sys_db, Options) of
-        true ->
-            ok;
-        false ->
-            couch_stats_process_tracker:track([couchdb, open_databases])
-    end.
-
-
 finish_engine_swap(_OldDb, _NewEngine, _CompactFilePath) ->
     erlang:error(explode).
 
